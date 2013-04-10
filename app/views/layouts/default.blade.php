@@ -35,7 +35,6 @@
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
-          <li><a href="/dogs">Dogs</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
         <h3 class="muted">Bootphp CMS</h3>
