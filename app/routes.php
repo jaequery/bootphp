@@ -1,16 +1,17 @@
 <?php
 
 /* frontend */
-Route::get('/', 'pageController@showIndex');
-Route::get('/contact', 'pageController@showContact');
-Route::get('/about', 'pageController@showAbout');
+Route::get('/', 'PageController@showIndex');
+Route::get('/contact', 'PageController@showContact');
+Route::get('/about', 'PageController@showAbout');
 
 /* backend */
-Route::get('/admin',            array('uses'=>'adminController@showIndex'));
-Route::get('/admin/dashboard',  array('uses'=>'adminController@showDashboard',  'before'=>'auth'));
-Route::get('/admin/users',      array('uses'=>'adminController@showUsers',      'before'=>'auth'));
-Route::get('/admin/user/{id}',  array('uses'=>'adminController@showUser',       'before'=>'auth'));
+Route::get('/admin',            array('uses'=>'AdminController@showIndex'));
+Route::get('/admin/dashboard',  array('uses'=>'AdminController@showDashboard',  'before'=>'auth'));
+Route::get('/admin/users',      array('uses'=>'AdminController@showUsers',      'before'=>'auth'));
+Route::get('/admin/user/{id}',  array('uses'=>'AdminController@showUser',       'before'=>'auth'));
 
 /* api */
-Route::get('/api',         array('uses'=>'apiController@index'));
-Route::post('/api/auth',         array('uses'=>'apiController@auth'));
+Route::get('/api',         array('uses'=>'ApiController@index'));
+Route::get('/api/auth',         array('uses'=>'ApiController@auth'));
+Route::get('/api/logout',         array('uses'=>'ApiController@logout'));

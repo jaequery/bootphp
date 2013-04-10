@@ -10,10 +10,6 @@ class AdminController extends BaseController {
 
     public function showIndex()
     {
-        if (Auth::check())
-        {
-             return "You're logged in!";
-        }
         if(Auth::guest()){
             $this->layout->redir = Session::get('redir');    
         }

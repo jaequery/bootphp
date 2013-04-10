@@ -14,7 +14,7 @@ class ApiController extends BaseController {
 
     public function index()
     {
-        return "this is API";
+        return "admin / " . Hash::make('demo');
     }
 
     public function auth()
@@ -31,6 +31,12 @@ class ApiController extends BaseController {
         }
         
         
+    }
+    
+    public function logout(){
+        $logout = Auth::logout();
+        
+        return $this->respond( array($logout), 200, 'logged out');
     }
 
 }
