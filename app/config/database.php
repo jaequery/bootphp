@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'bootphp',
 			'username'  => 'root',
-			'password'  => 'j',
+			'password'  => 'test',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
