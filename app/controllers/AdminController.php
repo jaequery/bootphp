@@ -7,7 +7,7 @@ class AdminController extends BaseController {
         $this->layout = 'layouts.admin';
         $this->title = "Bootphp | Admin";
     }
-
+    
     public function showIndex()
     {
         if(Auth::guest()){
@@ -38,6 +38,16 @@ class AdminController extends BaseController {
     {
         $params['user'] = User::find($id);
         $this->layout->content = View::make('admin.user')->with($params);
+    }
+    
+    public function showPosts(){
+        $params['posts'] = Post::orderBy('id', 'desc')->get();
+        $this->layout->content = View::make('admin.posts')->with($params);
+    }
+    
+    public function showPost($id){
+        $params['post'] = Post::find($id);
+        $this->layout->content = View::make('admin.post')->with($params);
     }
 
 }

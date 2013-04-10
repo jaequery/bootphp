@@ -37,5 +37,33 @@ class ApiController extends BaseController {
         if(!Request::ajax()) return Redirect::to('/admin');
         return $this->respond( array($logout), 200, 'logged out');
     }
+    
+    public function data(){
+        $model = Input::get('model');
+        $cmd = Input::get('cmd','save');
+        $data = Input::get('data');
+        
+        switch($cmd){
+            case 'insert':
+                $model_obj = new $model;
+                foreach($data as $key=>$value){
+                    $model_obj->$key = $value;
+                }
+                $model_obj->save();
+            case 'update':
+                $model_obj = $model::find($data['id']);
+                foreach($data as $key=>$value){
+                    $model_obj->$key = $value;
+                }
+                $model_obj->save();
+            break;
+            case 'delete':
+                $model_obj = $model::find($data['id']);
+                $model_obj->delete();
+            break;
+        }
+        
+        exit;
+    }
 
 }

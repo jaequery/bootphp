@@ -8,14 +8,13 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
         padding-bottom: 40px;
       }
     </style>
-    <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -28,6 +27,7 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -45,6 +45,7 @@
             <ul class="nav">
               <li class="active"><a href="/admin">Dashboard</a></li>
               <li><a href="/admin/users">Users</a></li>
+              <li><a href="/admin/posts">Posts</a></li>
             </ul>
             <?php if(Auth::guest()){ ?>
             <form class="navbar-form pull-right" action="/api/login" method="POST">
@@ -78,19 +79,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap-transition.js"></script>
-    <script src="/assets/js/bootstrap-alert.js"></script>
-    <script src="/assets/js/bootstrap-modal.js"></script>
-    <script src="/assets/js/bootstrap-dropdown.js"></script>
-    <script src="/assets/js/bootstrap-scrollspy.js"></script>
-    <script src="/assets/js/bootstrap-tab.js"></script>
-    <script src="/assets/js/bootstrap-tooltip.js"></script>
-    <script src="/assets/js/bootstrap-popover.js"></script>
-    <script src="/assets/js/bootstrap-button.js"></script>
-    <script src="/assets/js/bootstrap-collapse.js"></script>
-    <script src="/assets/js/bootstrap-carousel.js"></script>
-    <script src="/assets/js/bootstrap-typeahead.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 
   </body>
 </html>
