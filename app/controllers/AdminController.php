@@ -10,6 +10,9 @@ class AdminController extends BaseController {
 
     public function showIndex()
     {
+        if(Auth::guest()){
+            $this->layout->redir = Session::get('redir');    
+        }
         $this->layout->content = View::make('admin.index');
     }
 

@@ -1,8 +1,8 @@
 <?php
 
 /* frontend */
-Route::get('/', 'PageController@showIndex');
-Route::get('/contact', 'PageController@showContact');
+Route::get('/', 'pageController@showIndex');
+Route::get('/contact', 'pageController@showContact');
 Route::get('/about', 'pageController@showAbout');
 
 /* backend */
@@ -12,4 +12,5 @@ Route::get('/admin/users',      array('uses'=>'adminController@showUsers',      
 Route::get('/admin/user/{id}',  array('uses'=>'adminController@showUser',       'before'=>'auth'));
 
 /* api */
-Route::get('/api/login',         array('uses'=>'apiController@showLogin'));
+Route::get('/api',         array('uses'=>'apiController@index'));
+Route::post('/api/auth',         array('uses'=>'apiController@auth'));

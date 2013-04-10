@@ -34,8 +34,11 @@ App::after(function($request, $response)
 */
 
 Route::filter('auth', function()
-{
-	if (Auth::guest()) return Redirect::to('/admin');
+{    
+	if (Auth::guest()){
+        $redir = $_SERVER['REQUEST_URI'];
+        return Redirect::to('/admin')->with('redir', $redir);
+    }
 });
 
 
