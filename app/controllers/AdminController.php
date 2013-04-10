@@ -12,6 +12,8 @@ class AdminController extends BaseController {
     {
         if(Auth::guest()){
             $this->layout->redir = Session::get('redir');    
+        }else{
+            return Redirect::to('/admin/dashboard');
         }
         $this->layout->content = View::make('admin.index');
     }

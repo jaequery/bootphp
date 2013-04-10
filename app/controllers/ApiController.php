@@ -17,25 +17,24 @@ class ApiController extends BaseController {
         return "admin / " . Hash::make('demo');
     }
 
-    public function auth()
+    public function login()
     {
         $credentials = array('username' => Input::get('username'), 'password' => Input::get('password'));
         $auth = Auth::attempt($credentials);
         $res = array('auth' => $auth);
+
         if ($auth){
-            //if(!Request::ajax()) return Redirect::to('/admin');
+            if(!Request::ajax()) return Redirect::to('/admin');
             return $this->respond($res, 200, 'logged in');
         }else{
-            //if(!Request::ajax()) return Redirect::to('/admin');
+            if(!Request::ajax()) return Redirect::to('/admin');
             return $this->respond($res, 404, 'user not found');
         }
-        
-        
     }
     
     public function logout(){
         $logout = Auth::logout();
-        
+        if(!Request::ajax()) return Redirect::to('/admin');
         return $this->respond( array($logout), 200, 'logged out');
     }
 

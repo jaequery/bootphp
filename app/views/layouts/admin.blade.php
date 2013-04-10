@@ -47,14 +47,16 @@
               <li><a href="/admin/users">Users</a></li>
             </ul>
             <?php if(Auth::guest()){ ?>
-            <form class="navbar-form pull-right" action="/api/auth" method="POST">
+            <form class="navbar-form pull-right" action="/api/login" method="POST">
               <input class="span2" type="hidden" name="redir" value="{{ $redir }}">
               <input class="span2" type="text" name="username" placeholder="Email">
               <input class="span2" type="password" name="password" placeholder="Password">
               <button type="submit" class="btn">Sign in</button>
             </form>
             <?php }else{ ?>
-              Welcome!
+              <form class="navbar-form pull-right" method="POST">
+                <a href="/api/logout" class="btn">Logout</a>
+              </form>
             <?php } ?>
           </div><!--/.nav-collapse -->
         </div>
