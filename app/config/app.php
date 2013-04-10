@@ -52,7 +52,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'FVkstpTg5Chh1JecK1iWFuQUMqfUhI5e',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -99,7 +99,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+		'Way\Generators\GeneratorsServiceProvider'
 	),
 
 	/*

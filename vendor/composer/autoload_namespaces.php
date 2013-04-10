@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Way\\Generators' => $vendorDir . '/way/generators/src/',
     'Symfony\\Component\\Translation\\' => $vendorDir . '/symfony/translation/',
     'Symfony\\Component\\Routing\\' => $vendorDir . '/symfony/routing/',
     'Symfony\\Component\\Process\\' => $vendorDir . '/symfony/process/',

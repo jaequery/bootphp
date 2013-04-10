@@ -2,17 +2,20 @@
 
 class BaseController extends Controller {
 
+	public function __construct(){
+		$this->layout = 'layouts.default';
+		$this->title = 'Bootphp CMS';
+	}
+
 	/**
 	 * Setup the layout used by the controller.
 	 *
 	 * @return void
 	 */
-	protected function setupLayout()
+	public function setupLayout()
 	{
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = View::make($this->layout);
-		}
+		$this->layout = View::make($this->layout);
+		$this->layout->title = $this->title;
 	}
 
 }
