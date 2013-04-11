@@ -20,8 +20,8 @@ var admin = {
             };
             $.post('/api/data', opts, function(res){
                 if(res.status.code == 200){
-                    switch(cmd){
-                        case 'update': location.history.go(-1); break;
+                    switch(opts.cmd){
+                        case 'update': history.back(); break;
                     }
                 }
             });
