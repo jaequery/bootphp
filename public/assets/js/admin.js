@@ -19,7 +19,11 @@ var admin = {
                 model: $(this).data('model')
             };
             $.post('/api/data', opts, function(res){
-                console.log(res);
+                if(res.status.code == 200){
+                    switch(cmd){
+                        case 'update': location.history.go(-1); break;
+                    }
+                }
             });
         });
     }
