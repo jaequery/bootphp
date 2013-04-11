@@ -51,7 +51,9 @@ class ApiController extends BaseController {
                 }
                 $model_obj->save();
             case 'update':
+                echo "trest";
                 $model_obj = $model::find($data['id']);
+                
                 foreach($data as $key=>$value){
                     $model_obj->$key = $value;
                 }
@@ -61,9 +63,11 @@ class ApiController extends BaseController {
                 $model_obj = $model::find($data['id']);
                 $model_obj->delete();
             break;
+            default:
+                $model_obj = false;
+            break;
         }
-        
-        exit;
+        return $this->respond( array($model_obj), 200);
     }
 
 }
