@@ -17,4 +17,4 @@ Route::get('/admin/post/{id}',  array('uses'=>'AdminController@showPost',       
 Route::get('/api',         array('uses'=>'ApiController@index'));
 Route::post('/api/login',         array('uses'=>'ApiController@login'));
 Route::get('/api/logout',         array('uses'=>'ApiController@logout'));
-Route::get('/api/data',         array('uses'=>'ApiController@data'));
+Route::post('/api/data',         array('uses'=>'ApiController@data'));
