@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="/themes/bootphp/css/bootphp.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -32,16 +32,16 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="/admin">Project name</a>
-          <div class="nav-collapse collapse">
+          </a>
+          <a href="/transactions" class="brand">Bootphp <span class='label label-success'>Beta</span></a>
+          <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="/admin">Dashboard</a></li>
               <li><a href="/admin/users">Users</a></li>
@@ -55,11 +55,18 @@
               <button type="submit" class="btn">Sign in</button>
             </form>
             <?php }else{ ?>
-              <form class="navbar-form pull-right" method="POST">
-                <a href="/api/logout" class="btn">Logout</a>
-              </form>
+            <ul class="nav pull-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-user'></i> jaequery@gmail.com <b class='caret'></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/transactions">My Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/api/logout" data-method="delete" rel="nofollow">Sign Out</a></li>
+                  </ul>
+                </li>
+            </ul>
             <?php } ?>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
@@ -67,11 +74,11 @@
     <div class="container">
 
       <?php echo $content; ?>
-      
+
       <hr>
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; Bootphp CMS 2013</p>
       </footer>
 
     </div> <!-- /container -->
