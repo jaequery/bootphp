@@ -51,7 +51,6 @@ class ApiController extends BaseController {
                 }
                 $model_obj->save();
             case 'update':
-                echo "trest";
                 $model_obj = $model::find($data['id']);
                 
                 foreach($data as $key=>$value){
@@ -67,7 +66,7 @@ class ApiController extends BaseController {
                 $model_obj = false;
             break;
         }
-        return $this->respond( array($model_obj), 200);
+        return $this->respond( array('res'=>$model_obj), 200);
     }
 
 }
