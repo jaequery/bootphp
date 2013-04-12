@@ -8,9 +8,12 @@ var admin = {
             pages[x].init();
         }
         this.triggers();
+
+	this.events.mainmenu();
+
     },
     triggers: function(){
-        //submission of boot api data 
+        //submission of boot api data
         $('.boot-api-data').on('submit', function(e){
             e.preventDefault();
             var opts = {
@@ -26,6 +29,17 @@ var admin = {
                 }
             });
         });
+    },
+    events: {
+	mainmenu: function(){
+	    $('.boot-mainmenu li a').each(function(){
+		var cur_url = window.location.pathname;
+		var menu_url = $(this).attr('href');
+		if(cur_url == menu_url){
+		    $(this).parent().addClass('active');
+		}
+	    });
+	}
     }
 };
 

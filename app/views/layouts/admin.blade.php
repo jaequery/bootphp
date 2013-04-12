@@ -39,10 +39,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a href="/transactions" class="brand">Bootphp <span class='label label-success'>Beta</span></a>
+          <a href="/admin" class="brand">Bootphp <span class='label label-success'>Beta</span></a>
           <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="/admin">Dashboard</a></li>
+            <ul class="nav boot-mainmenu">
+              <li><a href="/admin">Dashboard</a></li>
               <li><a href="/admin/users">Users</a></li>
               <li><a href="/admin/posts">Posts</a></li>
             </ul>
@@ -58,7 +58,7 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-user'></i> jaequery@gmail.com <b class='caret'></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/transactions">My Profile</a></li>
+                    <li><a href="/admin/profile">My Profile</a></li>
                     <li class="divider"></li>
                     <li><a href="/api/logout" data-method="delete" rel="nofollow">Sign Out</a></li>
                   </ul>
