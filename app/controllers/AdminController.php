@@ -6,8 +6,9 @@ class AdminController extends BaseController {
         parent::__construct();
         $this->layout = 'layouts.admin';
         $this->title = "Bootphp | Admin";
+
     }
-    
+
     public function index()
     {
         if(Auth::guest()){
@@ -34,9 +35,9 @@ class AdminController extends BaseController {
         $this->layout->content = View::make('admin.users')->with($params);
     }
 
-    public function user($id = '')
+    public function user($id = 'new')
     {
-        if($id == 'add'){
+        if($id == 'new'){
             $params['user'] = array();
         }else{
             $params['user'] = User::find($id);
