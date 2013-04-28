@@ -24,17 +24,22 @@ class ApiController extends BaseController {
         $res = array('auth' => $auth);
 
         if ($auth){
-            if(!Request::ajax()) return Redirect::to('/admin');
+            if(!Request::ajax()){
+                // class = ['alert-info', 'alert-success', 'alert-error', '']
+                return Redirect::to('/admin/dashboard')->with('flash', array("message" => "You have now logged in", "class" => "alert-success"));
+            }
             return $this->respond($res, 200, 'logged in');
         }else{
-            if(!Request::ajax()) return Redirect::to('/admin');
+            if(!Request::ajax()){ 
+                return Redirect::to('/admin')->with('flash', array("message" => "Invalid username or password, please try again", "class" => "alert-error"));
+            }
             return $this->respond($res, 404, 'user not found');
         }
     }
     
     public function logout(){
         $logout = Auth::logout();
-        if(!Request::ajax()) return Redirect::to('/admin');
+        if(!Request::ajax()) return Redirect::to('/admin')->with('flash', array("message" => "You have logged out", "class" => "alert"));
         return $this->respond( array($logout), 200, 'logged out');
     }
     
@@ -67,6 +72,11 @@ class ApiController extends BaseController {
             break;
         }
         return $this->respond( array('res'=>$model_obj), 200);
+    }
+
+    public function flash(){
+        $flash = Session::get('flash', '');
+        return $this->respond( array('flash'=>$flash), 200);
     }
 
 }

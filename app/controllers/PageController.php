@@ -7,17 +7,17 @@ class PageController extends BaseController {
         parent::__construct();
     }
 
-    public function showIndex()
+    public function index()
     {
         $this->layout->content = View::make('page.index');
     }
 
-	public function showAbout()
+	public function about()
     {
         $this->layout->content = View::make('page.about');
     }
 
-    public function showContact()
+    public function contact()
     {
         $this->layout->content = View::make('page.contact');
     }
