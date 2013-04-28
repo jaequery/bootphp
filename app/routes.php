@@ -6,12 +6,12 @@ Route::get('/contact',          'PageController@contact');
 Route::get('/about',            'PageController@about');
 
 /* backend */
-Route::get('/admin',            array('uses'=>'AdminController@index'));
-Route::get('/admin/dashboard',  array('uses'=>'AdminController@dashboard',  'before'=>'auth'));
-Route::get('/admin/users',      array('uses'=>'AdminController@users',      'before'=>'auth'));
-Route::get('/admin/user/{id}',  array('uses'=>'AdminController@user',       'before'=>'auth'));
-Route::get('/admin/posts',      array('uses'=>'AdminController@posts',      'before'=>'auth'));
-Route::get('/admin/post/{id}',  array('uses'=>'AdminController@post',       'before'=>'auth'));
+Route::get('/admin',                    array('uses'=>'AdminController@index'));
+Route::get('/admin/dashboard',          array('uses'=>'AdminController@dashboard',  'before'=>'auth'));
+Route::get('/admin/users',              array('uses'=>'AdminController@users',      'before'=>'auth'));
+Route::get('/admin/users/{id}',         array('uses'=>'AdminController@user',       'before'=>'auth'));
+Route::get('/admin/posts',              array('uses'=>'AdminController@posts',      'before'=>'auth'));
+Route::get('/admin/posts/{id}',         array('uses'=>'AdminController@post',       'before'=>'auth'));
 
 /* api */
 Route::get('/api',              array('uses'=>'ApiController@index'));
