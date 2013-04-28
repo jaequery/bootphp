@@ -12,7 +12,7 @@ class PageController extends BaseController {
         $this->layout->content = View::make('page.index');
     }
 
-	public function about()
+    public function about()
     {
         $this->layout->content = View::make('page.about');
     }
